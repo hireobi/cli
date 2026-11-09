@@ -1,59 +1,71 @@
 # Obi CLI
 
-Obi, the AI Search Employee by Heysurface, Inc., works in your own AI assistant. This repository distributes the installable CLI and bundled Skill for invited Alpha accounts. The product source repository is private.
+Obi is an AI Search Employee. It learns your ICP, asks AI the questions your buyers ask, and writes the missing pieces that get your product recommended. This repository distributes the Obi CLI and its Skill, which run inside the coding agent you already use. Built for founders, GTM teams and marketing teams.
 
-## Install the Alpha
+## Install
 
 Node.js 22 or later is required.
 
 ```bash
-npm install --global https://github.com/Heysurface/cli/releases/download/v0.1.6-alpha/heysurface-cli-0.1.6.tgz
-obi --version
+npm i -g @hireobi/cli
 obi skill install
 ```
 
-Version `0.1.6` provides both `obi` and the compatible `heysurface` command. They share the same account connection. The existing `/heysurface` Skill remains available.
+Then open a new chat in your agent and call Obi:
 
-Open a new assistant chat:
+| Agent | Call Obi with |
+|---|---|
+| Claude Code, Cursor | `/obi` |
+| Codex | `$obi`, or Obi in the skills picker |
 
-- Claude Code or Cursor: type `/obi`.
-- Codex CLI: type `$obi` or select Obi through `/skills`.
-- Codex desktop: select Obi from the skills picker.
+Obi asks which website to work on, then starts. The Skill also works in Windsurf, GitHub Copilot, Gemini CLI, Cline, Amp and OpenCode, and the CLI in any terminal: run `obi` to see the welcome, `obi --help` for every command.
 
-Obi asks which business to work on in the conversation. Account access remains invitation-only; downloading the public package does not enable public signup or grant paid capabilities.
+## What Obi does
 
-## Terminal welcome
+It learns **your ICP**, finds **the missing pieces** that get AI to recommend you, and **does the work end to end**. Results in weeks, free to start.
 
-Run `obi` in an interactive terminal to see the mascot and getting-started
-instructions. It exits normally; the conversation stays in your assistant.
-The shell welcome supports English and French from your terminal locale;
-`OBI_LANGUAGE=fr obi` selects French explicitly. Narrow or no-color terminals
-use plain text. The Skill follows the conversation language independently.
-Explicit commands, redirected output and JSON stay undecorated.
+- **ICP-Based AI Search.** Every strategy targets the buyers who sign.
+- **Contextual Buyer Prompts.** It asks AI the questions your buyers ask, in their own words.
+- **Missing-Piece Content.** It writes what AI can't find elsewhere, so it cites you fast.
 
-## Verify the download
+Obi measures answers on ChatGPT, Gemini and Google AI Overviews, and on Claude and Perplexity as add-ons. As the Agent Search Employee, it checks what AI crawlers and agents can read on your site and writes what agents read before they choose. The whole product: https://github.com/hireobi
 
-The [v0.1.6-alpha release](https://github.com/Heysurface/cli/releases/tag/v0.1.6-alpha) includes the package and `heysurface-cli-0.1.6.tgz.sha256`. On macOS or Linux, download both files into the same directory, then run:
+## How it works, and what leaves your machine
+
+- **Your agent does the thinking.** Obi researches and writes with your agent's model and tools, on the plan you already pay for. It reads the files a task needs only with your agreement.
+- **Obi's servers measure.** They keep your account, ask the AI engines the buyer questions you approved, and store the measured answers.
+- **You approve every page.** Every page Obi writes is a draft until you approve it. A plan never publishes, posts or buys anything on its own.
+- **Your sign-in stays local.** The CLI keeps its connection in your system's credential store, or in a protected file where none exists. `obi doctor` says which; `obi logout` signs you out.
+
+## Plans
+
+Free: 10 questions on ChatGPT and Gemini, one scan a month. Core pack: 25 reviewed questions on ChatGPT, Gemini and Google AI Overviews, scanned weekly, $20 a month. Every plan: https://hireobi.com/pricing.md
+
+## Check, update, remove
 
 ```bash
-shasum -a 256 -c heysurface-cli-0.1.6.tgz.sha256
-npm install --global ./heysurface-cli-0.1.6.tgz
+obi --version     # the installed version
+obi doctor        # where the connection is stored; sends no request
+obi logout        # signs out on this machine
+npm uninstall --global @hireobi/cli
 ```
 
-Archive SHA-256: `7f6c66031dc4c2153a10a80d9e429171853bed4a291712d614857db15250177b`.
+## Verify a download
 
-## Work with Obi
+Each [release](https://github.com/hireobi/cli/releases) lists the SHA-256 digest of its archive.
 
-The Skill guides sourced business research, Business review and buyer-question corrections, measured scan review, strategies, and saved content revisions. Draft history and export retain the selected revision. Authorized operators can evaluate a public company in a separate case without claiming ownership of that company's website.
+## Security
 
-Public research and reasoning use the capabilities available in your assistant. The CLI imports complete native browser observations, discovers JavaScript-rendered links and resumes the existing research inventory. The bundled capture guide uses actual navigation metadata; the CLI does not install a browser or buy hosted research automatically. Engine scans run on Heysurface servers after the reviewed question version and authorized coverage are approved. Purchase preparation requires explicit confirmation and returns a browser checkpoint. Saved paid scope can resume within verified capacity without creating another checkout; a scan already admitted retains its saved questions and budget.
-
-Public package availability does not authorize publishing content or starting paid work. Assistant search/browser availability and subscription limits still apply.
-
-## Previous releases
-
-[v0.1.5-alpha](https://github.com/Heysurface/cli/releases/tag/v0.1.5-alpha), [v0.1.4-alpha](https://github.com/Heysurface/cli/releases/tag/v0.1.4-alpha), [v0.1.3-alpha](https://github.com/Heysurface/cli/releases/tag/v0.1.3-alpha) and [v0.1.2-alpha](https://github.com/Heysurface/cli/releases/tag/v0.1.2-alpha) remain available with their original assets.
+Report a vulnerability privately: [Report a vulnerability](https://github.com/hireobi/cli/security/advisories/new). What to expect and what is in scope: [SECURITY.md](https://github.com/hireobi/.github/blob/main/SECURITY.md).
 
 ## License
 
-The CLI and Skill are distributed under the [Heysurface CLI License](LICENSE). Public download does not grant a right to redistribute the package or access the Heysurface service. Third-party notices remain included in the package.
+The CLI and Skill are distributed under the [Heysurface CLI License](LICENSE).
+
+## Links
+
+- Website: https://hireobi.com
+- For AI agents: https://hireobi.com/agents.md
+- Facts for AI assistants: https://hireobi.com/ai-instructions.md
+- Every entity around Obi: https://hireobi.com/entity-map.md
+- Obi on GitHub: https://github.com/hireobi
